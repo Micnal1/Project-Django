@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data.0.country }}</title>
+</head>
+<body>
+<script>
+var a = 0
+</script>
+
+
+<h1>{{ data.0.country }}</h1>
+{{ data }}<br>
+
+{% for i in data %}
+
+<h4>Populacja:</h4>
+<p>{{ i.population }}</p>
+<h4>Przypadki:</h4>
+<p>{{ i.cases }}</p>
+<p>{{ i.population }}</p>
+
+<h4>śmierci:</h4>
+{{ i.deaths}}
+
+<script>
+a += {{ i.deaths.new }}
+</script>
+
+{% endfor%}
+
+<script>
+document.getElementById("d_sum").innerHTML = a;
+</script>
+
+<p id = "d_sum"></p>
+</body>
+</html>
