@@ -1,47 +1,34 @@
 import requests
 
 
-def search_country(country=False):
-    url = "https://covid-193.p.rapidapi.com/countries"
+def get_heders_and_response(endpoint, querystring=None):
+    url = f"https://covid-193.p.rapidapi.com/{endpoint}"
 
     headers = {
         'x-rapidapi-key': "af83ac33ccmsh0117c1c8e6f5d8fp1e3768jsn91b522d919de",
         'x-rapidapi-host': "covid-193.p.rapidapi.com"
     }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    return response.json()["response"]
+
+
+def search_country(country=None):
+    endpoint = "countries"
+
     if country:
         querystring = {"search": country}
-        response = requests.request("GET", url, headers=headers, querystring=querystring)
+        response = get_heders_and_response(endpoint, querystring)
 
     else:
-        response = requests.request("GET", url, headers=headers)
+        response = get_heders_and_response(endpoint)
 
-    return response.json()["response"]
+    return response
 
 
 def get_raport(country, day):
-    url = "https://covid-193.p.rapidapi.com/history"
-
+    endpoint = "history"
     querystring = {"country": country, "day": day}
 
-    headers = {
-        'x-rapidapi-key': "af83ac33ccmsh0117c1c8e6f5d8fp1e3768jsn91b522d919de",
-        'x-rapidapi-host': "covid-193.p.rapidapi.com"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    return response.json()["response"]
-
-
-def get_country_raport():
-    url = "https://covid-193.p.rapidapi.com/countries"
-
-    querystring = {"search": "Poland"}
-
-    headers = {
-        'x-rapidapi-key': "af83ac33ccmsh0117c1c8e6f5d8fp1e3768jsn91b522d919de",
-        'x-rapidapi-host': "covid-193.p.rapidapi.com"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    return response.json()
+    response = get_heders_and_response(endpoint, querystring)
+    return response

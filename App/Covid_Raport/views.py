@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .api_client import get_raport, get_country_raport, search_country
+from .api_client import get_raport, search_country
 from datetime import date
 
 
