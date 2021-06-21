@@ -1,0 +1,38 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="{% static 'my.css' %}">
+
+<div class="banner">
+    <div class="title">
+        <h1>Covid-Raport</h1>
+
+
+
+    </div>
+    <nav>
+        <button class="nav"><a href="/covid/">Home</a></button> |
+            <button class="nav"><a href="/covid/*">contact</a></button> |
+
+    </nav>
+
+    <div class="search">
+        <form method="get" action="/covid/">
+            <input id="search" placeholder="search" name="country">
+            <button>Search</button>
+        </form>
+    </div>
+
+</div>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,13 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
+{% extends 'index.html' %}
+
+
+{% block content %}
 {% for i in data %}
 <a href="/covid/details/{{ i }}">{{ i }}</a>
 {% endfor %}
-
+{% endblock %}
 </body>
 </html>

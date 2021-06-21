@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends 'index.html' %}
     <meta charset="UTF-8">
     <title>{{ data.0.country }}</title>
 </head>
 <body>
 
+
+
+{% block content %}
 <h1>{{ data.0.country }}</h1>
 
 <h2>Populacja:</h2>
@@ -20,7 +24,7 @@
 <h2>Śmierci:</h2>
 <p>{{ data.0.deaths.total }}</p>
 
-
+{% endblock %}
 
 
 
