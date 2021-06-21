@@ -1,0 +1,30 @@
+.banner{
+color: white;
+background-color: hsla(220, 100%, 25%, 1.3);
+height: 100px;
+width: 100%;
+right: 7px;
+position: relative;
+
+}
+
+.title{
+background-color: hsla(100, 100%, 20%, 1.3);
+border: 10px color:red;
+text-align: center;
+
+}
+
+.search{
+text-align: right;
+position: absolute;
+right: 10px;
+}
+
+nav{
+position: absolute;
+}
+
+button.nav{
+background-color: grey;
+}
