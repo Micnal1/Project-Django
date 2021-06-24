@@ -13,17 +13,19 @@
         <h1>Covid-Raport</h1>
 
 
-
     </div>
     <nav>
-        <button class="nav"><a href="/covid/">Home</a></button> |
-            <button class="nav"><a href="/covid/*">contact</a></button> |
+        <button class="nav"><a href="/covid/">Home</a></button>
+        |
+        <button class="nav"><a href="/covid/*">contact</a></button>
+        |
 
     </nav>
 
     <div class="search">
-        <form method="get" action="/covid/">
-            <input id="search" placeholder="search" name="country">
+        <form method="post" action="/covid/">
+            {% csrf_token %}
+            {{ form.query }}
             <button>Search</button>
         </form>
     </div>
