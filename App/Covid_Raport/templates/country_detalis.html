@@ -24,6 +24,10 @@
 <h2>Śmierci:</h2>
 <p>{{ data.0.deaths.total }}</p>
 
+{% autoescape off %}
+{{ diagram }}
+{% endautoescape %}
+
 {% endblock %}
 
 
